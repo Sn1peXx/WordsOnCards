@@ -1,5 +1,5 @@
 const fetchData = async () => {
-    const obj = await fetch('http://localhost:8888/ForeignCards/data/data.json', {
+    const obj = await fetch('http://i95239ig.beget.tech/data/data.json', {
         method: "GET",
         headers: {
             'Content-type': 'application/json; charset=utf-8'
