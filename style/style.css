@@ -232,7 +232,7 @@ body {
     bottom: 20px;
     cursor: pointer;
     border: none;
-    background-color: inherit;
+    background-color: transparent;
 }
 
 .question {
@@ -241,7 +241,7 @@ body {
     bottom: 20px;
     cursor: pointer;
     border: none;
-    background-color: inherit;
+    background-color: transparent;
 }
 
 .modal_setting {
@@ -729,7 +729,7 @@ input:checked + .slider:before {
     }
 
     .main {
-        padding-bottom: 300px;
+        padding-bottom: 200px;
     }
 
     .login_btn {
@@ -746,7 +746,11 @@ input:checked + .slider:before {
     }
 
     .__select__label {
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    .__select__title {
+        overflow: hidden;
     }
 
     .modal_setting {
@@ -770,5 +774,9 @@ input:checked + .slider:before {
     .modal_help {
         width: 100%;
         margin-top: -68px;
+    }
+
+    .main {
+        padding-bottom: 300px;
     }
 }

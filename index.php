@@ -22,15 +22,13 @@
                     <form>
                         <div class="__select" data-state="" style="z-index: 2000">
                             <div class="__select__title" data-default="Option 0">Выберите язык</div>
-                            <div class="__select__content">
+                            <div class="__select__content" id="select_language">
                                 <input id="singleSelect0" class="__select__input" disabled type="radio" name="singleSelect" checked />
                                 <label for="singleSelect0" class="__select__label">Выберите язык</label>
                                 <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
                                 <label for="singleSelect1" class="__select__label">🇦🇮 Английский язык</label>
                                 <input id="singleSelect2" class="__select__input" type="radio" name="singleSelect" />
                                 <label for="singleSelect2" class="__select__label">🇩🇪 Немецкий язык</label>
-                                <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
-                                <label for="singleSelect3" class="__select__label">🇫🇷 Французский язык</label>
                                 <input id="singleSelect4" class="__select__input" type="radio" name="singleSelect" />
                                 <label for="singleSelect4" class="__select__label">🇨🇳 Китайский язык</label>
                                 <input id="singleSelect5" class="__select__input" type="radio" name="singleSelect" />
@@ -54,7 +52,7 @@
             <div class="card_content card_content-word" style="padding: 20px 20px;">
                 <span style="font-size: 35px; font-weight: 500;">Выберите язык</span><br>
                 <span class="blue_span" style="font-size: 23px; color: #2B6ADE; font-weight: 300;"> И нажмите с любой стороны от карточки</span></div>
-            <div class="card_content card_content-translate hide">
+            <div class="card_content card_content-translate hide" style="padding: 20px 20px;">
                 <span style="font-size: 35px; font-weight: 500;">Выберите язык</span><br>
                 <span class="blue_span" style="font-size: 23px; color: #2B6ADE; font-weight: 300;"> И нажмите с любой стороны от карточки</span></div>
             </div>
@@ -80,10 +78,19 @@
                 <span class="slider round"></span>
             </label>
         </div>
+
+        <div class="setting_item" style="margin-top: 20px;">
+            <p class="setting_subtitle">Сначала на русском</p>
+            <label class="switch">
+                <input type="checkbox" id="firstLang">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
         <div class="setting_item" style="border-bottom: none">
             <button class="setting_button">Посмотреть мои слова</button>
         </div>
-    </div>
+    </div> 
 
     <div class="modal_help hide">
         <button class="setting_close help_close close"></button>
@@ -108,7 +115,6 @@
                 <select name="langSelect" required class="word_select">
                     <option value="Английский язык">🇦🇮 Английский язык</option>
                     <option value="Немецкий язык">🇩🇪 Немецкий язык</option>
-                    <option value="Французский язык">🇫🇷 Французский язык</option>
                     <option value="Китайский язык">🇨🇳 Китайский язык</option>
                     <option value="Румынский язык">🇷🇴 Румынский язык</option>
                 </select>

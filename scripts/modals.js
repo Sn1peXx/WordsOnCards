@@ -1,4 +1,5 @@
 const checkbox = document.querySelector('#isAnimation');
+const checkboxTranslate = document.querySelector("#firstLang");
 const setting = document.querySelector('.setting');
 const closeBtn = document.querySelector('.setting_close');
 const closeWordBtn = document.querySelector('.word_close');
@@ -13,11 +14,16 @@ const main = document.querySelector('.main');
 
 document.addEventListener("DOMContentLoaded", () => {
     checkbox.checked = JSON.parse(localStorage.getItem('isAnimation'));
+    checkboxTranslate.checked = JSON.parse(localStorage.getItem('isTranslate'));
 });
 
 checkbox.addEventListener('change', () => {
     localStorage.setItem('isAnimation', JSON.stringify(checkbox.checked));
 });
+
+checkboxTranslate.addEventListener('change', () => {
+    localStorage.setItem('isTranslate', JSON.stringify(checkboxTranslate.checked));
+})
 
 setting.addEventListener('click', () => {
     modalSetting.classList.toggle('hide');

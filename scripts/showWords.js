@@ -5,7 +5,8 @@ const modalAllItem = document.querySelector('.modal_all_items');
 
 
 const fetchMyWords = async () => {
-    const obj = await fetch('http://i95239ig.beget.tech/data/data.json', {
+    //  http://i95239ig.beget.tech/data/data.json
+    const obj = await fetch('http://localhost:8888/ForeignCards/data/data.json', {
         method: "GET",
         headers: {
             'Content-type': 'application/json; charset=utf-8'
@@ -48,5 +49,4 @@ closeModalAll.addEventListener('click', () => {
     main.classList.toggle('hide');
     body.classList.toggle('blur');
     modalAll.classList.toggle('hide');
-    location.reload();
 });
