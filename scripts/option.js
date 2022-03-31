@@ -22,6 +22,8 @@ selectSingle_title.addEventListener('click', () => {
     }
 });
 
+
+console.log(localStorage.getItem('language'))
 // Если язык уже был выбран, то показывает его
 if (localStorage.getItem('language')) {
     window.addEventListener('DOMContentLoaded', () => {
@@ -77,31 +79,35 @@ function nextCardShow(e) {
 
         // Показ сначала русского или иностранного
         if (JSON.parse(localStorage.getItem('isTranslate'))) {
-            console.log('if')
             cardWithWord.classList.add('hide');
             cardWithTranslate.classList.remove('hide');
         } else {
-            console.log('else')
             cardWithWord.classList.remove('hide');
             cardWithTranslate.classList.add('hide');
         }
 
 
         try {
-            showDataInCard(); // Показываем новые данные
-            // Проверка что бы слово не повторялось 2 раза подряд
-            unusedValue = getRandomValue(0, ARR_LENGTH);
+            if (ARR_LENGTH !== 1) {
+                showDataInCard(); // Показываем новые данные
+                // Проверка что бы слово не повторялось 2 раза подряд
+                unusedValue = getRandomValue(0, ARR_LENGTH);
 
-            if (unusedValue !== COUNTER) {
-                COUNTER = unusedValue;
-                unusedValue = null;
-            } else {
-                while (COUNTER === unusedValue) {
-                    unusedValue = getRandomValue(0, ARR_LENGTH);
+                if (unusedValue !== COUNTER) {
+                    COUNTER = unusedValue;
+                    unusedValue = null;
+                } else {
+                    while (COUNTER === unusedValue) {
+                        unusedValue = getRandomValue(0, ARR_LENGTH);
+                    }
+                    COUNTER = unusedValue;
+                    unusedValue = null;
                 }
-                COUNTER = unusedValue;
-                unusedValue = null;
+            } else {
+                COUNTER = 0;
+                showDataInCard();
             }
+
 
         } catch {}
     }
