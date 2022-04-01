@@ -282,6 +282,19 @@ body {
     border-radius: 10px;
 }
 
+.modal_group {
+    width: 600px;
+    height: 500px;
+    background-color: white;
+    position: fixed;
+    z-index: 2001; /* Sit on top */
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .modal_all {
     width: 600px;
     height: 550px;
@@ -574,6 +587,27 @@ input:checked + .slider:before {
 .help_text {
     font-size: 20px; 
     font-weight: 300;
+}
+
+.input_group-modal {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.group_input {
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.groupBtn:hover {
+    transition: .4s;
+    transform: scale(1.1);
+}
+
+.groupBtn:not(:hover) {
+    transition: .3s;
 }
 
 @media (max-width: 1250px) {

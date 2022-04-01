@@ -1,1 +1,29 @@
-[{"username":"Sn1peXx","lang":"Английский язык","word":"vbbbbbbb","desc":"","translate":"афцуфуафцуа","rudesc":""},{"username":"Sn1peXx","lang":"Английский язык","word":"cat","desc":"","translate":"кошка","rudesc":"","group":"Животные"}]
+[
+    {
+        "username": "Sn1peXx",
+        "lang": "Английский язык",
+        "word": "cat",
+        "desc": "",
+        "translate": "кошка",
+        "rudesc": "",
+        "group": ""
+    },
+    {
+        "username": "Sn1peXx",
+        "lang": "Английский язык",
+        "word": "dog",
+        "desc": "",
+        "translate": "собака",
+        "rudesc": "",
+        "group": "животные"
+    },
+    {
+        "username": "Sn1peXx",
+        "lang": "Английский язык",
+        "word": "squierrel",
+        "desc": "",
+        "translate": "белка",
+        "rudesc": "",
+        "group": "животные"
+    }
+]

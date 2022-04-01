@@ -23,7 +23,6 @@ selectSingle_title.addEventListener('click', () => {
 });
 
 
-console.log(localStorage.getItem('language'))
 // Если язык уже был выбран, то показывает его
 if (localStorage.getItem('language')) {
     window.addEventListener('DOMContentLoaded', () => {

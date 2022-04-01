@@ -4,7 +4,7 @@ $wordLang = filter_var(trim($_POST['wordLang']), FILTER_SANITIZE_STRING);
 $descLang = filter_var(trim($_POST['descLang']), FILTER_SANITIZE_STRING);
 $wordTrans = filter_var(trim($_POST['wordTrans']), FILTER_SANITIZE_STRING);
 $descTrans = filter_var(trim($_POST['descTrans']), FILTER_SANITIZE_STRING);
-$wordGroup = filter_var(trim($_POST['wordGroup']), FILTER_SANITIZE_STRING);
+$wordGroup = filter_var(trim(mb_strtolower($_POST['wordGroup'])), FILTER_SANITIZE_STRING);
 $langSelect = $_POST['langSelect'];
 
 $file = file_get_contents('./data.json');

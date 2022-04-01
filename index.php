@@ -64,7 +64,7 @@
 </button>
 
 <button class="question">
-    <img src="./assets/questionmark_83826.svg" style="opacity: .6;" width="40" alt="help">
+    <img src="./assets/layers.png" style="opacity: .6;" width="40" alt="group">
 </button>
 
 <div class="modal_setting hide">
@@ -99,6 +99,20 @@
         При нажатии на карточку показывается перевод слова. При нажатии с любой стороны от карточки меняется слово. <br><br>
         Приятного пользования!
     </p>
+</div>
+
+
+<div class="modal_group hide">
+    <button class="setting_close group_close close"></button>
+    <h3 class="setting_title" style="color: #2B6ADE">Выберите группу слов</h3>
+    <div class="input_group-modal">
+        <input class="word_input group_input" autocomplete="off" type="text" placeholder="Группа (Животные, Город ...)" list="listGroup" name="wordGroup">
+        <datalist id="listGroup"></datalist>
+        <div style="display:flex; justify-content: space-evenly">
+            <button class="setting_button groupSelectBtn groupBtn">Подтвердить</button>
+            <button class="setting_button groupUnSelectBtn groupBtn">Без группы</button>
+        </div>
+    </div>
 </div>
 
 

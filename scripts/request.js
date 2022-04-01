@@ -3,7 +3,9 @@ const fetchData = async () => {
     const obj = await fetch('http://localhost:8888/ForeignCards/data/data.json', {
         method: "GET",
         headers: {
-            'Content-type': 'application/json; charset=utf-8'
+            'Content-type': 'application/json',
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials" : true
         }
     })
 
@@ -12,7 +14,12 @@ const fetchData = async () => {
     data.length = 0;
 
     const usersWord = dataJson.filter(user => {
+        if (localStorage.getItem('selectedGroup')) {
+            return user.username === localStorage.getItem("login") && user.lang === localStorage.getItem('language') && user.group === localStorage.getItem('selectedGroup');
+        }
+
         return user.username === localStorage.getItem("login") && user.lang === localStorage.getItem('language');
+
     })
 
     return data.push(...usersWord);
