@@ -13,7 +13,8 @@ const fetchData = async () => {
 
     data.length = 0;
 
-    const usersWord = dataJson.filter(user => {
+
+    const usersWord = dataJson.reverse().filter(user => {
         if (localStorage.getItem('selectedGroup')) {
             return user.username === localStorage.getItem("login") && user.lang === localStorage.getItem('language') && user.group === localStorage.getItem('selectedGroup');
         }

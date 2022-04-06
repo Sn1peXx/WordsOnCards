@@ -42,13 +42,8 @@ if (localStorage.getItem('language')) {
                 break;
         }
 
-        fetchData()
-            .then(data => ARR_LENGTH = data)
-            .then(() => {
-                window.addEventListener('click', e => {
-                    nextCardShow(e);
-                })
-            })
+        fetchRequest()
+
     })
 }
 
@@ -62,17 +57,34 @@ for (let i = 0; i < selectSingle_labels.length; i++) {
 
         localStorage.setItem("language", LANG);
 
-        fetchData()
-            .then(data => ARR_LENGTH = data)
-            .then(() => {
-                window.addEventListener('click', e => {
-                    nextCardShow(e);
-                })
-            })
+        fetchRequest()
     });
 }
 
-// Показывает следующее слово, при  клике на экран
+
+function fetchRequest() {
+    fetchData()
+        .then(data => {
+            if (JSON.parse(localStorage.getItem('resentlyWords')) === 0) {
+                ARR_LENGTH = data
+            } else {
+                ARR_LENGTH = localStorage.getItem('resentlyWords');
+            }
+
+            settingResently.innerHTML = `
+                    <p class="setting_subtitle">Показывать последних слов</p>
+                    <input class="resently_input" min="0" max="${data}" type="number" id="resentlyAdded">
+                `
+        })
+        .then(() => {
+            window.addEventListener('click', e => {
+                nextCardShow(e);
+            })
+        })
+}
+
+
+// Показывает следующее слово, при клике на экран
 function nextCardShow(e) {
     if (e.target === main) { // Если нажали мимо карточки
 
@@ -89,7 +101,7 @@ function nextCardShow(e) {
         try {
             if (ARR_LENGTH !== 1) {
                 showDataInCard(); // Показываем новые данные
-                // Проверка что бы слово не повторялось 2 раза подряд
+                // Проверка, что бы слово не повторялось 2 раза подряд
                 unusedValue = getRandomValue(0, ARR_LENGTH);
 
                 if (unusedValue !== COUNTER) {

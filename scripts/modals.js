@@ -5,6 +5,8 @@ const closeBtn = document.querySelector('.setting_close');
 const closeWordBtn = document.querySelector('.word_close');
 const modalSetting = document.querySelector('.modal_setting');
 const modalWord = document.querySelector('.modal_word');
+const modalHelp = document.querySelector('.modal_help');
+const helpClose = document.querySelector('.help_close');
 const headerButton = document.querySelector('.header_button-item');
 const groupBtn = document.querySelector('.question');
 const modalGroup = document.querySelector('.modal_group');
@@ -12,6 +14,8 @@ const groupClose = document.querySelector('.group_close');
 const groupSelectBtn = document.querySelector('.groupSelectBtn');
 const groupUnSelectBtn = document.querySelector('.groupUnSelectBtn');
 const groupInput = document.querySelector('.group_input');
+const questionBtn = document.querySelector('.question_btn');
+const settingResently = document.querySelector('.setting_resently');
 const body = document.querySelector('body');
 const main = document.querySelector('.main');
 const dataList = document.querySelector('#listGroup');
@@ -34,7 +38,23 @@ setting.addEventListener('click', () => {
     modalSetting.classList.toggle('hide');
     main.classList.toggle('hide');
     body.classList.toggle('blur');
+
+    const resentlyInput = document.querySelector('#resentlyAdded');
+
+    resentlyInput.value = JSON.parse(localStorage.getItem('resentlyWords'))
 });
+
+closeBtn.addEventListener('click', () => {
+    modalSetting.classList.toggle('hide');
+    main.classList.toggle('hide');
+    body.classList.toggle('blur');
+
+    const resentlyInput = document.querySelector('#resentlyAdded');
+
+    localStorage.setItem('resentlyWords', +resentlyInput.value);
+    location.reload();
+});
+
 
 groupBtn.addEventListener('click', () => {
     showPrompt()
@@ -60,8 +80,17 @@ groupClose.addEventListener('click', () => {
     modalGroup.classList.toggle('hide');
     main.classList.toggle('hide');
     body.classList.toggle('blur');
+});
+
+questionBtn.addEventListener('click', () => {
+    modalHelp.classList.toggle('hide');
+    modalSetting.classList.toggle('hide');
 })
 
+helpClose.addEventListener('click', () => {
+    modalHelp.classList.toggle('hide');
+    modalSetting.classList.toggle('hide');
+})
 
 headerButton.addEventListener('click', () => {
     modalWord.classList.toggle('hide');
@@ -110,12 +139,6 @@ headerButton.addEventListener('click', () => {
 
     }
 })
-
-closeBtn.addEventListener('click', () => {
-    modalSetting.classList.toggle('hide');
-    main.classList.toggle('hide');
-    body.classList.toggle('blur');
-});
 
 closeWordBtn.addEventListener('click', () => {
     modalWord.classList.toggle('hide');

@@ -246,7 +246,7 @@ body {
 
 .modal_setting {
     width: 600px;
-    height: 400px;
+    height: 500px;
     background-color: white;
     position: fixed;
     z-index: 2001; /* Sit on top */
@@ -531,6 +531,14 @@ input:checked + .slider:before {
     margin-bottom: 20px;
 }
 
+.resently_input {
+    border: 1px solid #181A30;
+    border-radius: 12px;
+    padding: 10px 5px;
+    width: 80px;
+    font-size: 20px;
+}
+
 .word_area {
     border: 1px solid #181A30;
     border-radius: 22px;
@@ -582,6 +590,15 @@ input:checked + .slider:before {
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.question_btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
 }
 
 .help_text {

@@ -56,7 +56,6 @@
             <span style="font-size: 35px; font-weight: 500;">Выберите язык</span><br>
             <span class="blue_span" style="font-size: 23px; color: #2B6ADE; font-weight: 300;"> И нажмите с любой стороны от карточки</span></div>
     </div>
-    </div>
 </main>
 
 <button class="setting">
@@ -87,9 +86,15 @@
         </label>
     </div>
 
+    <div class="setting_item setting_resently" style="margin-top: 20px;"></div>
+
     <div class="setting_item" style="border-bottom: none">
         <button class="setting_button">Посмотреть мои слова</button>
     </div>
+
+    <button class="question_btn">
+        <img src="./assets/questionmark_83826.svg" width="30" alt="">
+    </button>
 </div>
 
 <div class="modal_help hide">
@@ -98,6 +103,7 @@
     <p class="help_text">В первую очередь вам необходимо добавить слова для изучения. Для этого нажмите в правом верхнем углу на + <br><br>
         При нажатии на карточку показывается перевод слова. При нажатии с любой стороны от карточки меняется слово. <br><br>
         Приятного пользования!
+        <a href="https://t.me/AndreyLavrusenko">Поддержка</a>
     </p>
 </div>
 
@@ -158,10 +164,10 @@
 
 <script src="scripts/option.js"></script>
 <script src="./scripts/card.js"></script>
-<script src="./scripts/modals.js"></script>
 <script src="scripts/request.js"></script>
 <script src="scripts/showWords.js"></script>
 <script src="./scripts/login.js"></script>
+<script src="./scripts/modals.js"></script>
 
 </body>
 </html>
