@@ -24,4 +24,4 @@ $taskList[] = array(
 file_put_contents('./data.json',json_encode($taskList, JSON_UNESCAPED_UNICODE));
 unset($taskList);
 
-header('Location: ../index.php');
+header('Location: ../index.html');

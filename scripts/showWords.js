@@ -15,6 +15,8 @@ const fetchMyWords = async () => {
 
     const dataJson = await obj.json();
 
+    myWords.length = 0;
+
     const usersWord = dataJson.filter(user => {
         return user.username === localStorage.getItem("login")
     })
@@ -45,6 +47,7 @@ settingBtn.addEventListener('click', () => {
 
 
 closeModalAll.addEventListener('click', () => {
+    modalAllItem.textContent = '';
     modalSetting.classList.toggle('hide');
     main.classList.toggle('hide');
     body.classList.toggle('blur');

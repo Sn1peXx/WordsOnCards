@@ -15,4 +15,4 @@
     file_put_contents('./data.json',json_encode($usedBasket, JSON_UNESCAPED_UNICODE));
     unset($usedBasket);
 
-    header('Location: ../index.php');
+    header('Location: ../index.html');
