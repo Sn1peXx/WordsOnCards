@@ -3,6 +3,7 @@ const selectSingle_labels = document.querySelectorAll('.__select__label');
 const cardWithWord = document.querySelector('.card_content-word');
 const cardWithTranslate = document.querySelector('.card_content-translate');
 const selectSingle = document.querySelector('.__select');
+const headerAddWord = document.querySelector('.header_button-item');
 
 
 let ARR_LENGTH;
@@ -65,6 +66,11 @@ for (let i = 0; i < selectSingle_labels.length; i++) {
 function fetchRequest() {
     fetchData()
         .then(data => {
+
+            if (!!localStorage.getItem('resentlyWords') === false) {
+                localStorage.setItem('resentlyWords', 0);
+            }
+
             if (JSON.parse(localStorage.getItem('resentlyWords')) === 0) {
                 ARR_LENGTH = data
             } else {
@@ -154,3 +160,19 @@ if (window.innerWidth <= 710) {
 function getRandomValue(min, max) {
     return Math.floor(Math.random() * (max - min)) + min
 }
+
+
+window.addEventListener("DOMContentLoaded", () => {
+    fetchData().then(data => {
+        headerAddWord.addEventListener('click', () => {
+            if (data >= 3) {
+                modalWord.classList.toggle('hide');
+                main.classList.toggle('hide');
+                body.classList.toggle('blur');
+
+                alert("Разрешено не более 50 слов");
+            }
+        })
+
+    })
+})

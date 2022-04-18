@@ -52,7 +52,7 @@ closeBtn.addEventListener('click', () => {
     const resentlyInput = document.querySelector('#resentlyAdded');
 
     localStorage.setItem('resentlyWords', +resentlyInput.value);
-    location.reload();
+    window.location.reload(true);
 });
 
 

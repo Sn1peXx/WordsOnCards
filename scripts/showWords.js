@@ -26,10 +26,11 @@ const fetchMyWords = async () => {
 
 
 settingBtn.addEventListener('click', () => {
-    modalSetting.classList.remove('hide');
+    modalSetting.classList.add('hide');
     main.classList.add('hide');
     body.classList.add('blur');
     modalAll.classList.toggle('hide');
+
 
     fetchMyWords()
         .then(countItem => {
@@ -48,8 +49,9 @@ settingBtn.addEventListener('click', () => {
 
 closeModalAll.addEventListener('click', () => {
     modalAllItem.textContent = '';
-    modalSetting.classList.toggle('hide');
-    main.classList.toggle('hide');
-    body.classList.toggle('blur');
+    modalSetting.classList.remove('hide');
+    main.classList.add('hide');
+    body.classList.add('blur');
     modalAll.classList.toggle('hide');
+
 });
